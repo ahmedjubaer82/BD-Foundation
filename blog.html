@@ -17,7 +17,86 @@
     <script src="https://kit.fontawesome.com/23ae46fddc.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
-    
+
+<body class="max-w-screen-xl mx-auto">
+
+    <!-- header section -->
+    <header class="sticky top-0 max-w-screen-xl mx-auto">
+        <nav style="background-color: rgba(164, 211, 111, 0.2); backdrop-filter: blur(1rem);" class=" w-full h-[15vh] flex items-center justify-evenly">
+            <div class="">
+                <a href="index.html" class="btn hover:bg-[#B4F461] bg-[#B4F461] w-24 rounded-lg">Home</a>
+            </div>
+            <div class="flex justify-center items-center gap-2">
+                <img src="./images/logo.png" alt="logo" class="w-9">
+                <h1><b>BD Foundation</b></h1>
+            </div>
+            <div class="flex justify-center items-center gap-2">
+                <img src="./images/coin.png" alt="">
+                <h1 class="font-semibold"><span id="main-balance">5500</span>BDT</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main class="w-[95%] mx-auto">
+        <h3 class="text-4xl font-extrabold mt-5 ">Important FAQ <i class="fa-regular fa-circle-question"></i></h3>
+
+        <!-- QNA 1 -->
+        <div class="border-2 px-7 mt-5 rounded-xl">
+            <div id="question-div-1" class="flex justify-between items-center">
+                <h1 style="height: 5rem;" class="items-center flex">What is Document Object Model (DOM)?</h1>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>            
+             <p id="answer-field-1" class="hidden mb-7">"The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a webpage as a tree of objects, allowing developers to interact with and manipulate HTML or XML content dynamically using JavaScript."</p>
+        </div>
+
+        <!-- QNA 2 -->
+        <div class="border-2 px-7 mt-5 rounded-xl">
+            <div id="question-div-2" class="flex justify-between items-center">
+                <h1 style="height: 5rem;" class="items-center flex">How do you select an element fron the DOM?</h1>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+             <p id="answer-field-2" class="hidden mb-7">"To select an element from the DOM, you can use methods like document.getElementById(), document.querySelector(), or document.getElementsByClassName(). These methods allow you to access and manipulate specific elements based on their ID, class, or tag."</p>
+        </div>
+
+        <!-- QNA 3 -->
+        <div class="border-2 px-7 mt-5 rounded-xl">
+            <div id="question-div-3" class="flex justify-between items-center">
+                <h1 style="height: 5rem;" class="items-center flex">What is event deligation in the context of the DOM, and why it is useful?</h1>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+             <p id="answer-field-3"  class="hidden mb-7">"Event delegation is a technique in the DOM where a single event listener is attached to a parent element instead of multiple listeners on child elements. It captures events bubbling up from children, improving performance and simplifying code, especially when dynamically adding or removing elements from the DOM."</p>
+        </div>
+
+        <!-- QNA 4 -->
+        <div class="border-2 px-7 mt-5 rounded-xl">
+            <div id="question-div-4" class="flex justify-between items-center">
+                <h1 style="height: 5rem;" class="items-center flex">How do you manipulate an eliments attributes and styles using the DOM?</h1>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+             <p id="answer-field-4"class="hidden mb-7">"You can manipulate an element's attributes and styles using the DOM by accessing the element through methods like getElementById, querySelector, or getElementsByClassName. To change attributes, use element.setAttribute('attrName', 'value'). For styles, modify the style property, e.g., element.style.color = 'red'. This allows for dynamic updates to an element's appearance and behavior."</p>
+        </div>
+    </main>
+
+    <script>
+        //QNA handler
+        function qnaHandler(questionDivID, answerFieldID) {
+            document.getElementById(questionDivID).addEventListener('click', function () {
+                const answerField = document.getElementById(answerFieldID)
+                if (answerField.classList.contains('hidden')) {
+                    answerField.classList.remove('hidden');
+                    answerField.classList.add('block');
+                } else {
+                    answerField.classList.remove('block');
+                    answerField.classList.add('hidden');
+                }
+            })
+        }
+
+        qnaHandler('question-div-1', 'answer-field-1')
+        qnaHandler('question-div-2', 'answer-field-2')
+        qnaHandler('question-div-3', 'answer-field-3')
+        qnaHandler('question-div-4', 'answer-field-4')
+    </script>
 </body>
+
 </html>
